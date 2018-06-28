@@ -12,7 +12,7 @@ C++ Usage
 ---------
 
 
-```
+```cpp
 #include "bing_speech.h"
 
 int main() {
