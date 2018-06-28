@@ -11,10 +11,14 @@ class BingspeechConan(ConanFile):
     options = {"shared": [True, False]}
     default_options = "shared=False"
     generators = "cmake"
-    exports_sources = "src/*", "include/*", "CMakeLists.txt"
-    requires = "easy_sound/0.1@lasote/testing", \
-               "libcurl/7.56.1@bincrafters/stable", \
-               "rapidjson/1.1.0@bincrafters/stable"
+    requires = ("easy_sound/0.1@lasote/testing",
+                "libcurl/7.56.1@bincrafters/stable",
+                "rapidjson/1.1.0@bincrafters/stable")
+    scm = {
+        "type": "git",
+        "url": "auto",
+        "revision": "auto"
+    }
 
     def build(self):
         cmake = CMake(self)
